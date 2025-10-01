@@ -69,4 +69,4 @@
           Enter commands or type 'exit' to quit.
           >
 
-![Class Diagram](class_diagram.png) 
+![Class Diagram](img/class_diagram.png) 
