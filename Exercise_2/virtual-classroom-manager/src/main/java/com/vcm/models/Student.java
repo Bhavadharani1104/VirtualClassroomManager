@@ -9,7 +9,6 @@ public class Student implements Observer {
     private final String id;
 
     public Student(String id) {
-        // Defensive programming: Ensure ID is not null or empty
         if (id == null || id.trim().isEmpty()) {
             throw new IllegalArgumentException("Student ID cannot be null or empty.");
         }
