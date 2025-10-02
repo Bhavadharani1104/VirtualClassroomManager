@@ -27,7 +27,7 @@ public class Classroom extends Subject {
     public void addStudent(Student student) {
         if (student != null && !students.containsKey(student.getId())) {
             students.put(student.getId(), student);
-            this.addObserver(student); // Student is now an observer of this class
+            this.addObserver(student); 
         }
     }
 
@@ -42,7 +42,6 @@ public class Classroom extends Subject {
     public void scheduleAssignment(Assignment assignment) {
         if (assignment != null) {
             assignments.put(assignment.getDetails(), assignment);
-            // Notify all enrolled students (observers) about the new assignment
             notifyObservers(this.name, assignment.getDetails());
         }
     }
