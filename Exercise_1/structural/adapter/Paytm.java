@@ -1,6 +1,6 @@
 
 public class Paytm {
     public void doTransaction(String amt) {
-        System.out.println("Transaction of ₹" + amt + " done via Paytm");
+        System.out.println("Transaction of Rs " + amt + " done via Paytm");
     }
 }
