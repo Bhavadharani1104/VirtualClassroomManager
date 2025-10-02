@@ -36,7 +36,7 @@ This repository contains two main exercises. The first demonstrates six fundamen
 
 ---
 
-# EXERCISE 2: 8. Virtual Classroom Manager Programming Exercise 
+## EXERCISE 2: 8. Virtual Classroom Manager Programming Exercise 
 
 ### Overview
 This is a terminal-based Virtual Classroom Manager built in Java. It provides core functionality for managing classrooms, students, and assignments through a simple command-line interface, built upon models that manage the relationships between classrooms, their students, and scheduled assignments.
@@ -91,7 +91,7 @@ The project was designed with the SOLID principles in mind to ensure the code is
     mvn exec:java
     ```
     
-## Sample Interaction
+### Sample Interaction
            Virtual Classroom Manager Initialized.
 
           --- Virtual Classroom Manager Menu ---
@@ -109,5 +109,5 @@ The project was designed with the SOLID principles in mind to ensure the code is
           Enter commands or type 'exit' to quit.
           >
 
-## CLASS DIAGRAM FOR VIRTUAL CLASSROOM MANAGER
+### CLASS DIAGRAM FOR VIRTUAL CLASSROOM MANAGER
 ![Class Diagram](class_diagram.png) 
