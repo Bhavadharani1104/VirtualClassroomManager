@@ -16,18 +16,14 @@ public class VirtualClassroomManager {
 
     private static final Logger logger = LoggerFactory.getLogger(VirtualClassroomManager.class);
 
-    // Eager initialization of Singleton instance
     private static final VirtualClassroomManager instance = new VirtualClassroomManager();
 
-    // Using ConcurrentHashMap for thread-safety in a long-running app
     private final Map<String, Classroom> classrooms;
 
-    // Private constructor to prevent instantiation
     private VirtualClassroomManager() {
         classrooms = new ConcurrentHashMap<>();
     }
 
-    // Public method to get the single instance
     public static VirtualClassroomManager getInstance() {
         return instance;
     }
@@ -108,12 +104,10 @@ public class VirtualClassroomManager {
             throw new ClassroomNotFoundException("Error: Cannot submit assignment. Classroom '" + className + "' not found.");
         }
 
-        // New Validation: Check if the student is enrolled in this specific class.
         if (!classroom.hasStudent(studentId)) {
             throw new StudentNotFoundException("Error: Student '" + studentId + "' is not enrolled in '" + className + "'.");
         }
 
-        // In a real application, you would also check if the assignment exists.
         System.out.println("Assignment '" + assignmentDetails + "' submitted by Student " + studentId + " in " + className + ".");
         logger.info("Assignment '{}' submitted by student '{}' for classroom '{}'.", assignmentDetails, studentId, className);
     }
