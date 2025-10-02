@@ -12,7 +12,6 @@ public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    // A volatile boolean flag to control the application loop, ensuring visibility across threads.
     private static volatile boolean isRunning = true;
 
     public static void displayMenu() {
@@ -36,24 +35,19 @@ public class Main {
         displayMenu();
         System.out.println("Enter commands or type 'exit' to quit.");
 
-        // Main application loop controlled by a boolean flag, avoiding 'while(true)'
         while (isRunning) {
             System.out.print("> ");
             String input = scanner.nextLine();
 
-            // Graceful shutdown command
             if ("exit".equalsIgnoreCase(input.trim())) {
                 isRunning = false;
-                continue; // Skip the rest of the loop
+                continue; 
             }
 
             try {
-                // Factory creates the appropriate command object
                 Command command = CommandFactory.createCommand(input);
-                // Command is executed
                 command.execute();
             } catch (Exception e) {
-                // Centralized exception handling
                 System.err.println("Error: " + e.getMessage());
                 logger.error("An exception occurred during command execution:", e);
             }
